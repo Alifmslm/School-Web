@@ -1,0 +1,536 @@
+:root {
+    --colour-primary : #5CB85F;
+    --colour-bg1: #e5e5e5;
+    --colour-bg2: #f1f3ff;
+    --colour-txt-black: #1C1E2B;
+    --colour-light-blue: #cfd4ed;
+
+    --transition: all 400ms ease;
+}
+
+/* === global style === */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--colour-txt-black);
+    background: var(--colour-bg1);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, p, a {
+    color: var(--colour-txt-black);
+}
+
+h2 {
+    word-wrap: normal;
+    font-size: 2rem;
+    line-height: 1.5em;
+}
+
+p {
+    margin: 1rem 0;
+    line-height: 2rem;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* === end global style === */
+
+/* === navbar === */
+nav{
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar-list{
+    background: var(--colour-bg2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.navbar-item{
+    margin: 0 20px;
+}
+
+.navbar-item:last-child{
+    margin-right: 50px;
+}
+
+.toogle{
+    margin: 0 20px;
+    display: none;
+}
+
+.navbar-link{
+    font-weight: bold;
+}
+
+.navbar-link:hover{
+    color: var(--colour-primary);
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: 50px; 
+    cursor: point;
+}
+
+.navbar-button{
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--colour-primary);
+    border-radius: 4rem;
+    color: var(--colour-bg2);
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.navbar-button:hover{
+    color: var(--colour-txt-black);
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border-color: var(--colour-primary);
+}
+
+@media screen and (max-width:912px){
+    .navbar-list{
+        flex-wrap: wrap;
+    }
+
+    .toogle{
+        display: block;
+        width: 35px;
+        transition: var(--transition);
+    }
+
+    .navbar-item{
+        display: none;
+        width: 100%;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .navbar-button{
+        display: block;
+    }
+
+    .active{
+        display: block;
+    }
+
+    .container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .toogle{
+        width: 25px;
+        transition: var(--transition);
+    }
+
+    .logo{
+        font-size: 1.25rem;
+    }
+
+    .navbar-item{
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width:480px) {
+    .toogle{
+        width: 20px;
+        transition: var(--transition);
+    }
+
+    .logo{
+        font-size: 1rem;
+    }
+
+    .navbar-item{
+        font-size: 0.75rem;
+    }
+
+}
+
+/* === end navbar === */
+
+/* === start header === */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.header_container{
+    position: absolute;
+    z-index: 2;
+    width: 80%;
+    padding: 40px;
+    text-align: center;
+    justify-content: center;
+}
+
+.bg_image{
+    background-image: url("../img/1.JPG");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+    -webkit-filter: blur(5px);
+}
+
+.header_title {
+    color: var(--colour-bg2);
+    font-size: 3rem;
+}
+
+.header_text {
+    color: var(--colour-bg2);
+    font-size: 1.23rem;
+    /* line-height: 1.5rem; */
+}
+
+.btn_start {
+    display: inline-block;
+    color: var(--colour-bg2);
+    padding: 1rem 5rem;
+    border: 2px solid var(--colour-bg2);
+    border-radius: 4rem;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.btn_start:hover {
+    background: var(--colour-primary);
+    border: 2px solid var(--colour-primary);
+    padding: 1rem 6rem;
+}
+
+/* === end header === */
+
+/* === start benefit === */
+.benefit{
+    margin-top: 5rem;
+    padding-top: 1rem;
+}
+
+.benefit_header {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.benefit_container {
+    display: grid;
+    gap: 5rem;
+    margin-top: 4rem;
+}
+
+.benefit_row {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.benefit_title {
+    font-style: italic;
+    font-weight: medium;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.uil {
+    background-color: var(--colour-light-blue);
+    color: var(--colour-primary);
+    padding: 0.5rem;
+    text-align: center;
+    /* menggunakan 50% pada border radius akan membuat border menjadi bulat */
+    border-radius: 50%;
+    font-size: large;
+    margin-right: 0.5rem;
+}
+
+.benefit_image{
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    transition: var(--transition);
+    border-radius: 0.5rem;
+}
+
+.benefit_image img {
+    border-radius: 0.5rem;
+}
+
+.benefit_image:hover {
+    transform: scale(1.1);
+    box-shadow: 14px 14px 26px 0px rgba(105,105,105,0.42);
+    -webkit-box-shadow: 14px 14px 26px 0px rgba(105,105,105,0.42);
+    -moz-box-shadow: 14px 14px 26px 0px rgba(105,105,105,0.42);
+}
+/* === end benefit === */
+
+/* === start whyus === */
+.whyus{
+    position: relative;
+    margin-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: var(--colour-bg2);
+}
+
+.whyus_header {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.whyus_list {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.whyus_item {
+    border: 1px solid var(--colour-light-blue);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    background-color: var(--colour-bg2);
+    transition: var(--transition);
+    margin: 1rem 0;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.whyus_item:hover{
+    box-shadow: 2px 1px 50px 0px var(--colour-light-blue);
+    -webkit-box-shadow: 2px 1px 50px 0px var(--colour-light-blue);
+    -moz-box-shadow: 2px 1px 50px 0px var(--colour-light-blue);
+}
+
+.whyus_wave {
+    margin-top: -10px;
+}
+
+.whyus_text p{
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.whyus_text h3{
+    margin-top: 1rem;
+}
+
+/* === end whyus === */
+
+/* === media benefit & whyus? === */
+
+/* === kalo media query nga jalan mungkin ada TYPOO!! === */
+/* === silahkan cek penulisan code lagi === */
+@media screen and (max-width:768px) {
+    .benefit_container {
+        display: grid;
+        grid-template-columns: repeat(1, 2fr);
+
+    }
+
+    .benefit_row {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 1rem;
+        gap: 2rem;
+    }
+
+    .benefit_title {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .benefit_title, p{
+        text-align: center;
+    }
+
+    .whyus_header {
+        margin: 2rem 0;
+    }
+
+    .whyus_list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 2rem 1rem;
+    }
+
+}
+
+/* === kalo media query nga jalan mungkin ada TYPOO!! === */
+/* === silahkan cek penulisan code lagi === */
+@media screen and (max-width:480px){
+    .header_text {
+        line-height: 1.5;
+    }
+
+    .benefit_row {
+        padding: 1rem;
+        font-size: medium;
+    }
+
+    .whyus_list {
+        display: grid;
+        grid-template-columns: repeat(1, 2fr);
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+
+    .benefit_title {
+        margin-bottom: 1rem;
+    }
+}
+/* === end media benefit & whyus? === */
+
+/* === start about === */
+aside {
+    background-color: var(--colour-bg1);
+    justify-content: center;
+    padding: 100px;
+    margin-bottom: 1rem;
+}
+
+.aboutus_header {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.3rem;
+}
+
+.aboutus_card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    border-radius: 1rem;
+    transition: var(--transition);
+    background-color: var(--colour-bg2)
+}
+
+.aboutus_card:hover {
+    transform: scale(1.1);
+    box-shadow: 14px 14px 26px 0px rgba(105,105,105,0.42);
+    -webkit-box-shadow: 14px 14px 26px 0px rgba(105,105,105,0.42);
+    -moz-box-shadow: 14px 14px 26px 0px rgba(105,105,105,0.42);
+}
+
+.aboutus_img {
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info h3 {
+    font-size: 30px;
+    margin-bottom: 1rem;
+}
+
+.socialmedia {
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    aside {
+        margin: 50px 0;
+        padding: 0 50px;
+    }
+
+    .info h3 {
+        margin-bottom: 1rem;
+        font-size: 20px;
+    }
+
+    .info p {
+       font-size: 14px;
+       line-height: 1.5;
+       margin-bottom: 1rem;
+       text-align: left; 
+    }
+
+    .uil {
+        font-size: small;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .aboutus_card {
+        grid-template-columns: repeat(1, 2fr);
+    }
+}
+/* === end about === */
+
+/* === footer === */
+footer {
+    background-color: var(--colour-bg2);
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+/* .fab {
+    
+} */
+
+.link-fab {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+	bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+}
+
+.uil-whatsapp {
+    font-size: 50px;
+    padding: 0.8rem 1rem;
+    background-color: aliceblue;
+    color: #5CB85F;
+    border-radius: 50px;
+}
+
+/* === end footer === */
